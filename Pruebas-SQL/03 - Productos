@@ -1,0 +1,7 @@
+Muestra todos los productos y, si tienen un proveedor, su nombre.
+Asegúrate de incluir SOLO LOS PRODUCTOS QUE TENGAN PROVEEDOR.
+
+-- Extra: Si quieres hacerlo más interesante, muestra también el total de productos que tiene cada proveedor.
+
+
+--- COPIAD EL SQL UTILIZADO AQUÍ ---

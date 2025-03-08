@@ -1,0 +1,11 @@
+Clasifica los productos en categorías A, B o C según el total de ingresos generados.
+
+Si estan entre el 10% con más ingresos son A.
+Si estan entre el 10% y el 30% son B
+El resto son C.
+
+-- Extra: Si quieres hacerlo más interesante,
+ muestra también el total de ingresos que ha generado cada producto.
+
+
+--- COPIAD EL SQL UTILIZADO AQUÍ ---

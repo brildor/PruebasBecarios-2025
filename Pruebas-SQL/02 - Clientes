@@ -1,0 +1,7 @@
+Muestra los nombres de los clientes y, si tienen pedidos, el ID de su último pedido.
+Si no tienen pedidos, el cliente igual debe aparecer en la lista.
+
+-- EXTRA: Si quereis hacerlo más interesante, mostrad también el total de pedidos que tiene cada cliente.
+
+
+--- COPIAD EL SQL UTILIZADO AQUÍ ---

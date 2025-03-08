@@ -1,0 +1,19 @@
+- Para poder ejecutar estas pruebas hay que hacer lo siguiente:
+
+1) Navegar hacia esta carpeta.
+
+2) Ejecutar 'docker-compose up' o 'docker compose up' (En función de la versión de docker)
+ para levantar el contenedor de PostgreSQL, podeis añadir el atributo -d para que se
+ ejecute en segundo plano. [Si no os aclarais, solicitad ayuda!]
+
+2.1) Disponeis de la documentación del esquema de la BBDD en el archivo ER.png, situado en la misma carpeta.
+
+3) Ahora podeis utilizar cualquier herramienta de SQL para conectarse a la BBDD, como por ejemplo DBeaver,
+el puerto de conexión es el 55432, el usuario es postgres y la contraseña es postgres.
+
+3.1) Como ayuda auxiliar también podeis acceder a adminer para ver los datos con los que tendreis que trabajar.
+Este se encuentra en el puerto 8080, configuradlo con las credenciales de la imagen cred.png, la
+contraseña es postgres.
+
+
+4) Una vez configurada la conexión con la BBDD, podreis pasar a las preguntas de los archivos 02, 03 y 04.
