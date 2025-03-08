@@ -1,0 +1,16 @@
+Buenas! Lo primero que debes hacer para comenzar es una rama a partir de MASTER llamada
+"pruebas-MiNombre"
+Para ello, puedes ejecutar:
+
+```git checkout -b prueba-MiNombre```
+
+
+Cuando hayas acabado todas las pruebas, solicita acceso de escritura al repo,
+pushea todo a tu rama y abre un pull request a master
+con el siguiente comando (asegúrate de estar en tu rama):
+
+```git add .```
+```git commit -m "Mensaje de commit"```
+```git push origin prueba-MiNombre```
+
+¡Suerte! 🚀
