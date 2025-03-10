@@ -1,6 +1,12 @@
 # Archivo: two_sum.py
 
 def dos_numeros(nums, target):
+    for idx, i in enumerate(nums):
+        for idx2, j in enumerate(nums):
+            if i + j == target and (idx != idx2):
+                return [idx, idx2]
+
+
     """
     Encuentra los índices de dos números en el array de nums que suman el valor target.
 

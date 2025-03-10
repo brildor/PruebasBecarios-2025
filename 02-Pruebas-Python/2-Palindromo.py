@@ -11,7 +11,14 @@ def es_palindromo(x):
     Returns:
         bool: True si x es un palíndromo, False en caso contrario
     """
-    # implementar esta función
+
+    if x < 0:
+        return False
+
+    if str(x) == str(x)[::-1]:
+        return True
+    return False
+
     print(x)
     pass
 

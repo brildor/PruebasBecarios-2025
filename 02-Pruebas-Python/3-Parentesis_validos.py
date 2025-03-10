@@ -15,8 +15,37 @@ def son_parentesis_validos(s):
     Returns:
         bool: True si la cadena es válida, False en caso contrario
     """
-    # Los estudiantes implementarán esta función
-    print(s)
+
+    if len(s) == 0:
+        return True
+
+    if s[0] == ')' or s[0] == ']' or s[0] == '}':
+        return False
+
+    valores = []
+
+    for i in s:
+
+        if i == '(' or i == '[' or i == '{':
+            valores.append(i)
+        if i == ']':
+            if valores[len(valores) - 1] == '[':
+                valores.pop()
+            else:
+                return False
+        if i == ')':
+            if valores[len(valores) - 1] == '(':
+                valores.pop()
+            else:
+                return False
+        if i == '}':
+            if valores[len(valores) - 1] == '{':
+                valores.pop()
+            else:
+                return False
+
+
+    return len(valores) == 0
     pass
 
 

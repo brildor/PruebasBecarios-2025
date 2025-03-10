@@ -7,5 +7,31 @@ El resto son C.
 -- Extra: Si quieres hacerlo más interesante,
  muestra también el total de ingresos que ha generado cada producto.
 
+with products_david as (
+	select
+		p.product_id,
+		sum(od.unit_price * od.quantity) as "Total ingresos",
+		dense_rank()
+		over ( order by sum(od.unit_price * od.quantity) desc ) as "rango"
+	from
+		products p
+	left join order_details od on od.product_id = p.product_id
+	group by p.product_id
+	order by sum(od.unit_price * od.quantity) desc
+)
+
+select
+pd.product_id,
+round(cast(pd."Total ingresos" as NUMERIC), 2),
+pd.rango,
+case
+	when rango between 1 and (( select count(*) from products_david ) / 10)
+	then 'A'
+	when rango between (( select count(*) from products_david ) / 10) and (( select count(*) from products_david ) / 3)
+	then 'B'
+	else 'C'
+end as abc
+from products_david pd
+
 
 --- COPIAD EL SQL UTILIZADO AQUÍ ---
