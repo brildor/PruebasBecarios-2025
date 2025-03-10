@@ -17,7 +17,64 @@ def son_parentesis_validos(s):
     """
     # Los estudiantes implementarán esta función
     print(s)
-    pass
+    # abrirParatesis = s.split("(")
+    # cerrarParentesis = s.split(")")
+    # print(abrirParatesis, cerrarParentesis)
+    # for cadena in enumerate(s):
+        
+    #     for parentesis in parentesisListAbierto:
+    #         if cadena == parentesis:
+    #             contParentesisAbiertos += 1
+    #     for parentesis in parentesisListCerrado:
+    #         if cadena == parentesis:
+    #             contParentesisCerrados += 1  
+            
+    # pass
+    # print(contParentesisAbiertos, contParentesisCerrados)
+    # return contParentesisAbiertos == contParentesisCerrados
+    #firstParentesis = s[0]
+    # stringLength = len(s)
+    # print(stringLength)
+    # if s == "":
+    #     return True
+    
+    # for i, parentesis in enumerate(s):
+    #     if i >= (stringLength / 2):
+    #         break
+
+    #     contrario = ""
+    #     match parentesis:
+    #         case ")":
+    #             parentesis = "("
+    #         case "}":
+    #             parentesis = "{"
+    #         case "]":
+    #             parentesis = "["
+
+    #     if parentesis == parentesis[stringLength - 1]:
+    #         return False
+    list = []
+
+    for parentesis in s:
+        if s[0] == ")" or s[0] == "}" or s[0] == "]":
+            return False
+
+        if parentesis == "(" or parentesis == "{" or parentesis == "[":
+            list.append(parentesis)
+        
+        if parentesis == ")" and list[len(list)- 1] == '(':
+            list.pop()
+        elif parentesis == "}" and list[len(list)- 1] == "{":
+            list.pop()
+        elif parentesis == "]" and list[len(list)- 1] == "[":
+            list.pop()
+
+
+    return list == []
+
+        
+
+   
 
 
 # Casos de prueba

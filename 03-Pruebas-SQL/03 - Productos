@@ -5,3 +5,20 @@ Asegúrate de incluir SOLO LOS PRODUCTOS QUE TENGAN PROVEEDOR.
 
 
 --- COPIAD EL SQL UTILIZADO AQUÍ ---
+select 
+	products.product_name,
+	suppliers.contact_name,
+	case
+		when products.supplier_id is null 
+		then 'No'
+		else 'Si'
+	end have_supplier,
+	(select 
+		count(products.supplier_id) as total_products
+		from products
+		where products.supplier_id = suppliers.supplier_id
+	)
+from products
+right join suppliers
+	on products.supplier_id = suppliers.supplier_id
+where products.supplier_id is not null

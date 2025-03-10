@@ -11,9 +11,17 @@ def dos_numeros(nums, target):
     Returns:
         list: Una lista con los dos índices de los elementos que suman target
     """
-    print(nums, target)
+    for i in enumerate(nums):
+        list = []
+        for j, nextNum in enumerate(nums):
+            sum = nums[i] + nextNum
+            if i == 0 or i == j:
+                break
+            if sum == target:
+                list.append(j)
+                list.append(i)
+                return list
     pass
-
 
 # Casos de prueba
 casos_prueba = [

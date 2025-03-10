@@ -5,3 +5,17 @@ Si no tienen pedidos, el cliente igual debe aparecer en la lista.
 
 
 --- COPIAD EL SQL UTILIZADO AQUÍ ---
+
+select
+	customers.contact_name, 
+	MAX(orders.order_id) as last_order,
+	COUNT(orders.order_id) as num_orders,
+	case
+		when MAX(orders.order_id) is null 
+		then 'No'
+		else 'Si'
+	end have_order
+from customers
+left join orders 
+	on orders.customer_id = customers.customer_id 
+group by customers.contact_name

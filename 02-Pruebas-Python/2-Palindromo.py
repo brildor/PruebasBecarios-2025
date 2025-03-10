@@ -12,8 +12,8 @@ def es_palindromo(x):
         bool: True si x es un palíndromo, False en caso contrario
     """
     # implementar esta función
-    print(x)
-    pass
+    numToString = str(x)
+    return numToString == numToString[::-1]
 
 
 # Casos de prueba
