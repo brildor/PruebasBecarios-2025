@@ -1,4 +1,6 @@
 # Archivo: valid_parentheses.py
+from softwareproperties.gtk.utils import retry
+
 
 def son_parentesis_validos(s):
     """
@@ -16,8 +18,36 @@ def son_parentesis_validos(s):
         bool: True si la cadena es válida, False en caso contrario
     """
     # Los estudiantes implementarán esta función
-    print(s)
-    pass
+    lista = []
+
+    for i in s:
+        if i == '(' or i == '{' or i == '[':
+            lista.append(i)
+
+        else:
+            if len(lista) > 0:
+                if i == ')':
+                    if lista[(len(lista) - 1)] == '(':
+                        lista.pop()
+                    else:
+                        return False
+                if i == ']':
+                    if lista[(len(lista) - 1)] == '[':
+                        lista.pop()
+                    else:
+                        return False
+                if i == '}':
+                    if lista[(len(lista) - 1)] == '{':
+                        lista.pop()
+                    else:
+                        return False
+            else:
+                return False
+
+    if (len(lista)) == 0:
+        return True
+    else:
+        return False
 
 
 # Casos de prueba

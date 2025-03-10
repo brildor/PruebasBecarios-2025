@@ -12,9 +12,15 @@ def es_palindromo(x):
         bool: True si x es un palíndromo, False en caso contrario
     """
     # implementar esta función
-    print(x)
-    pass
 
+    entero = str(x)
+
+    inverso = entero[::-1]
+
+    if inverso == entero:
+        return True
+    else:
+        return False
 
 # Casos de prueba
 casos_prueba = [
