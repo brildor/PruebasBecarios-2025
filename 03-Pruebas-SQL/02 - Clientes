@@ -5,3 +5,14 @@ Si no tienen pedidos, el cliente igual debe aparecer en la lista.
 
 
 --- COPIAD EL SQL UTILIZADO AQUÍ ---
+
+select
+	p.product_name as "producto",
+	s.contact_name as "proveedores",
+	(
+		select count(p2.product_id) from products p2 where p2.supplier_id = s.supplier_id
+	)
+from products p
+right join suppliers s on s.supplier_id = p.supplier_id
+group by p.product_name, s.contact_name, s.supplier_id
+

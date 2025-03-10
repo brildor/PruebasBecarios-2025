@@ -5,3 +5,9 @@ Asegúrate de incluir SOLO LOS PRODUCTOS QUE TENGAN PROVEEDOR.
 
 
 --- COPIAD EL SQL UTILIZADO AQUÍ ---
+select
+	p.product_name as "producto",
+	s.contact_name as "proveedores"
+from products p
+right join suppliers s on s.supplier_id = p.supplier_id
+group by p.product_name, s.contact_name
